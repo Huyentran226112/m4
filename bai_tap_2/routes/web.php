@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +15,7 @@ use Illuminate\Http\Request;
 
 
 
-//hiện thi form từ điển 
+//hiện thi form từ điển
 Route::get('/tudien', function () {
     return view('welcome');
 });
@@ -49,5 +49,5 @@ Route::post('/tudien', function (Request $request) {
         if ($flag == 0) {
             echo "Không tìm thấy từ cần tra.";
         }
-   
+
     });
