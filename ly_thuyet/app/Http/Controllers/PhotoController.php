@@ -6,42 +6,67 @@ use Illuminate\Http\Request;
 
 class PhotoController extends Controller
 {
-    public function index(){
-        return view('photos.index');
-    }
-    public function show($id){
+    public function index()
+    {
         $params = [
-            'id' => $id
+            'id' => 1,
+            'name'=>'huyen',
+            'age'=>20
         ];
-        return view('photos.show',$params);
+        // extract($params);
+        $id = 1;
+        $name = 'huyen';
+        $age =20;
+
+
+        return view('admin.photos.index')
+        ->with('id', $id)
+        ->with('name', $name)
+        ->with('age',$age)
+        ->with('params',$params)
+        ;
+        // return view('photos.index', compact('id', 'name', 'age'));
+        // return view('photos.index')->with('id', 'name', 'age);
+
     }
-    public function create(){
-        return view('photos.create');
+    public function show($id)
+    {
+        $params = [
+            'id' => $id,
+            'name'=>'huyen',
+            'age'=>20
+        ];
+        return view('admin.photos.show', $params);
     }
-    public function store(Request $request){
+    public function create()
+    {
+        return view('admin.photos.create');
+    }
+    public function store(Request $request)
+    {
+
         dd($request->all());
     }
-    public function edit($id){
+    public function edit($id)
+    {
         $params = [
             'id' => $id
         ];
-        return view('photos.edit',$params);
+        return view('admin.photos.edit', $params);
     }
-    public function update($id, Request $request){
+    public function update($id, Request $request)
+    {
         // dd($request->all());
-            echo '<pre>';
-             print_r($request->all());
-            echo '</pre>';
-            die();
+        echo '<pre>';
+        print_r($request->all());
+        echo '</pre>';
+        die();
         // Validate
         // Goi model xu ly
         // Chuyen huong
 
     }
-    public function destroy($id){
-
+    public function destroy($id)
+    {
     }
-
-
 }
-
