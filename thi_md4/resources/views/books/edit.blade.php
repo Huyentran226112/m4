@@ -9,16 +9,25 @@
         <div class="mb-3">
             <label class="form-label">Tên danh mục</label>
             <input type="text" name="name" value='{{$danhsach->name}}' class="form-control">
+            @error('name')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         
         </div>
         <div class="mb-3">
             <label class="form-label">ISBN</label>
             <input type="text" name="isbn" value='{{$danhsach->isbn}}' class="form-control">
+            @error('isbn')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         
         </div>
         <div class="mb-3">
             <label class="form-label">TÁC GIẢ </label>
             <input type="text" name="author" value='{{$danhsach->author}}' class="form-control">
+            @error('author')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         
         </div>
         <div class="mb-3">
@@ -32,11 +41,17 @@
         <div class="mb-3">
             <label class="form-label">SỐ TRANG </label>
             <input type="text" name="pages" value='{{$danhsach->pages}}' class="form-control">
+            @error('pages')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         
         </div>
         <div class="mb-3">
             <label class="form-label">NĂM XUẤT BẢN</label>
             <input type="text" name="publication_year" value='{{$danhsach->publication_year}}' class="form-control">
+            @error('publication_year')
+            <div class="alert alert-danger">{{ $message }}</div>
+        @enderror
         
         </div>
         <input type="submit" value="Cập nhật" class="btn btn-primary">

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Danhsach;
 use App\Models\Category;
+use App\Http\Requests\StoreDanhsachRequest;
+use App\Http\Requests\UpdateDanhsachRequest;
 
 class DanhsachController extends Controller
 {
@@ -33,7 +35,7 @@ class DanhsachController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreDanhsachRequest $request)
     {
         $danhsach = new Danhsach();
         $danhsach->name = $request->name;
@@ -72,7 +74,7 @@ class DanhsachController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateDanhsachRequest $request, string $id)
     {
         
         // dd($request);
