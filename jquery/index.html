@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <script>
+ document.getElementById("btn").addEventListener("click", function(){
+    alert('Click me!');
+ });
+  document.getElementsByClassName('btn-class');
+  document.getElementsByTagName('button')
+
+/*
+        $(selector).action();
+        selector:
+        -tag
+        -id
+        -class
+
+*/
+//   $('#btn');
+//   $('.btn-class');
+//   $('button');
+
+/*
+su kien cua button
+click
+change
+dbclick
+*/
+// khi tai lieu da san sang 
+$(document).ready(function() {
+    $('#btn').dblclick(function(){
+    alert('Click me!');
+});
+});
+
+<button id="btn" class="btn-class">click me </button>   
+
+    </script>
+</body>
+</html>

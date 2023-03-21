@@ -3,8 +3,9 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <div class="container-fluid px-4"><br>
     <a class="btn btn-primary" href="{{route('category.create')}}"><i class="bi bi-plus-circle">thêm</i></a>
-    <table class="table" style="text-align:center">
+    <table  border="1"  class="table" style="text-align:center">
     <thead>
+        
         <tr>
             <th scope="col">Số thứ tự</th>
             <th scope="col">Tên</th>
@@ -16,8 +17,7 @@
         <tr>
             <td> {{ ++ $key}}</td>
             <td> {{$category->name}}</td>
-            <td>
-                    <td>
+           <td>
                 <form action="{{route('category.destroy',$category->id)}}" method="post">
                     @method('DELETE')
                     @csrf
@@ -30,5 +30,5 @@
             </td>
                 </tr>
                @endforeach
-            </tbody>
+            
         </table>

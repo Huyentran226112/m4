@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <form action="">
+        username: <input type="text" id="username" name="username"> <br>
+        <p id="username_error" class="error"></p> 
+        password: <input type="password" id="password" name="password">
+        <p id="password_error" class="error"></p> 
+
+        <button type="button"id='btn'>login</button>
+    </form>
+    <script>
+        $(document).ready(function(){
+           $('#btn').click(function(){
+            var username = $('#username').val();
+            alert(username);
+            var password = $('#password').val();
+            alert(password);
+            // tim phan tu co su phap 
+            $('.error').html('');
+
+            if(username ==''){
+                $('#username_error').html('vui long nhap username');
+            }
+            if(password ==''){
+                $('#password_error').html('vui long nhap password');
+            }
+            // ajax
+            let options ={
+                method :'POST',
+                url:'ajax.php',
+                dataType: 'json',
+                data:{
+                    username:username,
+                    password:password
+                },
+                success:function(response){
+                    console.log( response.input_username );//html => json
+            }
+        };
+        $.ajax(options);
+           });
+        });
+    </script>
+</body>
+</html>

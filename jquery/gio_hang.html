@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+</head>
+<body>
+
+    <!-- Tạo giao diện giỏ hàng bằng table -->
+    <h1 class="text-center">Cửa hàng bánh socola</h1>
+    <h3> Các loại sản phẩm</h3>
+    <table class="table">
+        <tr>
+            <td class="product_name">sản phẩm 1</td>
+            <td class="product_price">20000</td>
+            <td><button class="btn btn-info add_to_cart" >add</button></td>
+        </tr>
+        <tr>
+            <td class="product_name">sản phẩm 2</td>
+            <td class="product_price">20000</td>
+            <td><button class="btn btn-info add_to_cart" >add</button></td>
+        </tr>
+        <tr>
+            <td class="product_name">sản phẩm 3</td>
+            <td class="product_price">20000</td>
+            <td><button class="btn btn-info add_to_cart" >add</button></td>
+        </tr>
+    </table>
+    <div id="gio_hang">
+        giỏ hàng trống 
+    </div>
+
+    <script src="./jquery-3.6.3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script> 
+    <script>
+        jQuery( document ).ready( function(){
+            let products = [];
+            // Bắt sự kiện click
+            $(".add_to_cart").click(function(){
+                // tìm phần tử tr gần nhất với nút add_toCart
+                let tr = $(this).closest('tr');
+                //lấy name và price
+                let product_name = tr.find('.product_name').text();
+                let product_price = tr.find('.product_price').text();
+                //khai báo đối tượng product
+                let product = {
+                    product_name:product_name,
+                    product_price:product_price
+                }
+                //đưa phần tử vào mảng
+                products.push(product)
+                // duyệt vòng lặp để đưa vào giỏ hàng
+                let ul = '<ul>';
+                $.each(products,function(key,value){
+                    ul+= '<li>' + value.product_name + '<button class="xoa">Xoa</button> </li>';
+                })
+                ul+= '</ul>';
+                //  tim phan tu có id là  gio_hang
+                $('#gio_hang').html(ul)
+
+                /*
+                .text(); //lay gia tri
+                .text('')// set gia tri
+                */
+            });
+
+            // $('.xoa').click( function(){
+            //     alert('xoa')
+            // });
+            // Cách lấy phần tử, sau khi thay đổi DOM, gọi ajax, tạo mới DOM
+            $('body').on('click','.xoa',function(){
+                let xoa_li = $(this).closest('li');
+                xoa_li.remove();
+            })
+        });
+    </script>
+</body>
+</html>

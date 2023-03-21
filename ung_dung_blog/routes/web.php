@@ -16,10 +16,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
+    return view('includes.content');
+    });
+Route::get('detail', function () {
+    return view('includes.detail');
+})->name('detail');
 Route::resource('blogs', BlogController::class);
+Route::resource('categories', CategoriesController::class);
 
 
 

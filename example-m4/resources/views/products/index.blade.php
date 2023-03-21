@@ -7,7 +7,7 @@
                     <tr>
                         <th scope="col">Số thứ tự</th>
                         <th scope="col">Tên</th>
-                        <th adta-breakpoints="xs">Quản lí</th>
+                        {{-- <th adta-breakpoints="xs">Quản lí</th> --}}
                     </tr>
                 </thead>
                 <tbody id="myTable">

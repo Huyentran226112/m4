@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./jquery-3.6.3.min.js"></script>
+</head>
+<body>
+    <p>
+        xin chao cac ban 
+    </p>
+    <button id="btn-hide">click hide</button>
+    <button id="btn-show">click show</button>
+    
+    
+        <script>
+    
+    // khi tai lieu da san sang 
+    $(document).ready(function(){
+         $("#btn-hide").click(function(){
+        $("p").hide();
+         });
+    
+    $(document).ready(function(){
+         $("#btn-show").click(function(){
+        //    alert('show');
+        $("p").show();
+         });
+    });
+    });
+     </script>
+</body>
+</html>
