@@ -13,6 +13,7 @@ class TaskController extends Controller
     }
     public function create()
 {
+//   dd(view('add'));
     return view('add');
 }
 public function store(Request $request)

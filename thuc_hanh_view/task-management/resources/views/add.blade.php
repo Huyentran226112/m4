@@ -62,7 +62,7 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
         <hr>
-        <a href="{{ route('welcome') }}">< Back</a>
+        <!-- <a href="{{ route('welcome') }}">< Back</a> -->
     </div>
 </div>
 <!-- Nội dung form ở đây -->
